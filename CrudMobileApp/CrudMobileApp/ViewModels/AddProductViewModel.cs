@@ -1,6 +1,8 @@
-﻿using CrudMobileApp.Views;
+﻿using CrudMobileApp.Models;
+using CrudMobileApp.Views;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
 using System.Text;
@@ -13,7 +15,8 @@ namespace CrudMobileApp.ViewModels
     {
         public event PropertyChangedEventHandler PropertyChanged;
 
-        int id = 23112;
+        public ObservableCollection<Product> Products = new ObservableCollection<Product>();
+        string id = "23112";
         string productName = "Ravni Arador";
 
         public AddProductViewModel()
@@ -32,7 +35,7 @@ namespace CrudMobileApp.ViewModels
 
         async Task OpenProductBrowser()
         {
-            var productBrowserViewModel = new ProductBrowserViewModel();
+            var productBrowserViewModel = new ProductBrowserViewModel(Products);
             var productBrowser = new ProductBrowser();
             productBrowser.BindingContext = productBrowserViewModel;
 
@@ -41,7 +44,9 @@ namespace CrudMobileApp.ViewModels
 
         void SaveProduct()
         {
-
+            Products.Add(new Product() { Id = int.Parse(Id), Name = ProductName });
+            ProductName = string.Empty;
+            Id = string.Empty;
         }
 
         public string ProductName
@@ -55,7 +60,7 @@ namespace CrudMobileApp.ViewModels
             }
         }
 
-        public int Id
+        public string Id
         {
             get { return id; }
             set 

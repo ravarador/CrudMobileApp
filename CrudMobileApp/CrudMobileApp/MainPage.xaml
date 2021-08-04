@@ -5,16 +5,16 @@
 
     <StackLayout Padding="10" Spacing="10">
         <Label Text="Product Id"></Label>
-        <Entry Text="{Binding Id, Mode=OneWay}" Placeholder="Enter Product ID here..."></Entry>
+        <Entry Text="{Binding Id, Mode=TwoWay}" Placeholder="Enter Product ID here..."></Entry>
         <Label Text="Product Name"></Label>
-        <Entry Text="{Binding ProductName}" Placeholder="Enter Product Name here..."></Entry>
+        <Entry Text="{Binding ProductName, Mode=TwoWay}" Placeholder="Enter Product Name here..."></Entry>
 
         <StackLayout Orientation="Horizontal">
             <Label Text="Two Way Binding"></Label>
             <Label Text="{Binding DisplayMessage}"></Label>
         </StackLayout>
 
-        <Button Text="Add Product"></Button>
+        <Button Text="Add Product" Command="{Binding SaveProductCommand}"></Button>
         <Button Text="View All Products" Command="{Binding OpenProductBrowserCommand}"></Button>
     </StackLayout>
 

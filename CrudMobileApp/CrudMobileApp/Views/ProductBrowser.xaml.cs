@@ -15,7 +15,7 @@ namespace CrudMobileApp.Views
         {
             InitializeComponent();
 
-            
+            //TODO: Modal that will display more info about a product, Delete button, and Update button
         }
     }
 }

@@ -15,7 +15,7 @@
         </StackLayout>
 
         <Button Text="Add Product"></Button>
-        <Button Text="View All Products"></Button>
+        <Button Text="View All Products" Command="{Binding OpenProductBrowserCommand}"></Button>
     </StackLayout>
 
 </ContentPage>

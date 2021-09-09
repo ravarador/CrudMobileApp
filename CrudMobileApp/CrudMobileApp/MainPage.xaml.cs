@@ -14,7 +14,7 @@ namespace CrudMobileApp
         public MainPage()
         {
             InitializeComponent();
-            BindingContext = new AddProductViewModel();
+            BindingContext = new MainPageViewModel();
         }
     }
 }
